@@ -1,0 +1,55 @@
+<view class='page_row' bindtap="suo">
+  <view class="search">
+    <view class="df search_arr">
+      <icon class="searchcion" size='15' type='search'></icon>
+      <input class="searchinput" placeholder="请输入关键字" value="{{searchValue}}" bindinput="searchValueInput"/>
+    </view>
+  </view>
+  <view class='sousuo' bindtap='clickSearch'>搜索</view>
+</view>
+
+<view class='nosearch' wx:if="{{noData}}">暂无搜索结果</view>
+
+<!--主体  -->
+<block wx:for="{{listArray}}" wx:for-index="bindex" wx:key="{{item}}">
+    <view class="q-right">
+      <view class="q-info">
+      <!--用户信息  -->
+        <view class="q-man">
+          <open-data class='q-avatar' mode='aspectFit' type="userAvatarUrl"></open-data>
+          <open-data class="user-name" type="userNickName"></open-data>
+        </view>
+        <!--标签  -->
+        <view class="q-tags">
+          <block wx:for="{{item.cate_name}}" wx:key="{{item}}">
+            <view class="q-tag">{{item}}</view>
+          </block>
+        </view>
+      </view>
+      <view class="q-title" bindtap="goDetail">{{item.des}}</view>
+
+      <!--图片及视频  -->
+      <view class="pic-grid">
+        <block wx:if="{{item.type==1}}"> 
+            <image wx:for="{{item.url}}" wx:key="{{item}}" data-index='{{bindex}}' data-image="{{item}}" mode="aspectFill" bindtap="imgYu" src="{{item}}" class="pic2"></image>  
+        </block> 
+      
+      <block wx:if="{{item.type==2}}">
+        <video wx:for="{{item.url}}" wx:key="{{item}}" src="{{item}}" class='list-video'></video>      
+      </block>
+      </view>
+    </view>
+
+  <view class='list-bottom'>
+    <!--时间  -->
+    <view class='timeline'>{{item.addtime}}</view>
+    <!--按钮  -->
+    <view class='bottom-btn' >
+      <view class='copy-btn' data-index="{{bindex}}" bindtap="clickcopy">复制文案</view>
+      <view class='copy-btn' data-index="{{bindex}}" bindtap="clicksave">一键保存</view> 
+    </view>
+  </view>
+
+  <!--分割线  -->
+  <view class="border-b"></view>
+</block>

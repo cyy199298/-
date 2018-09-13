@@ -1,0 +1,13 @@
+@import "/lib/weui.wxss";
+@import "/pages/list/list.wxss";
+
+.delete {
+  height: 30rpx;
+  line-height: 30rpx;
+  background-color: red;
+  font-size: 15rpx;
+  color: white;
+  float: left;
+  margin-right: 5rpx;
+  padding: 0rpx 10rpx;
+}

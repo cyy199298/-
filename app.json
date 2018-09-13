@@ -1,0 +1,45 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/my/my",
+    "pages/gflist/gflist",
+    "pages/list/list",
+    "pages/all/all",
+    "pages/home/home",
+    "pages/release/release",
+    "pages/my-list/my-list",
+    "pages/search/search"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#1A93F9",
+    "navigationBarTitleText": "享爱猫商学院",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh":true
+  },
+  "tabBar": {
+    "backgroundColor": "#ffffff",
+    "color": "#999999",
+    "selectedColor": "#1A93F9",
+    "list": [
+      {
+        "pagePath": "pages/all/all",
+        "text": "全部素材",
+        "iconPath": "/assets/images/server.png",
+        "selectedIconPath": "/assets/images/server-full.png"
+      },
+      {
+        "pagePath": "pages/home/home",
+        "text": "分类素材",
+        "iconPath": "/assets/images/homepage.png",
+        "selectedIconPath": "/assets/images/homepage_fill.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "/assets/images/mine.png",
+        "selectedIconPath": "/assets/images/mine_fill.png"
+      }
+    ]
+  }
+}

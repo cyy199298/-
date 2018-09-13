@@ -1,0 +1,31 @@
+<view >
+    <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+        <view wx:for="{{firstArray}}" wx:key="{{item}}" class="tab-item {{currentTab==index?'active':''}}"  data-current="{{index}}" data-pid="{{item.id}}" bindtap="swichNav">{{item.name}}</view>
+
+    </scroll-view>
+    <navigator url="/pages/search/search" hover-class="navigator-hover">
+      <view class='searchButton'>
+        <image src='/assets/images/search2.png'></image>
+      </view> 
+    </navigator>
+
+    <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab"
+     style="height:{{winHeight}}rpx">
+        <swiper-item wx:for="{{firstArray}}" wx:key="*this">
+            <scroll-view scroll-y="true" class="scoll-h" >
+              <view class="class-doc-list">
+                <block wx:for="{{secondArray}}" wx:key="*this">
+                  <view class="class-doc-list-item" data-id="{{item.id}}" data-type="{{item.is_offical}}" bindtap='itemDetail'>
+                    <view class="class-doc-list-img-box">
+                      <image mode="aspectFill" class="class-doc-list-img-box-img" src="{{item.pic}}"></image>
+                      <view class="view-count">
+                        <text class="view-count-text">{{item.name}}</text>
+                      </view>
+                    </view>
+                  </view>
+                </block>
+              </view>    
+            </scroll-view>
+        </swiper-item>
+    </swiper>
+</view>

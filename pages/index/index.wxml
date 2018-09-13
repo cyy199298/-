@@ -1,0 +1,39 @@
+<!--start.wxml-->
+<view class="container">
+  <view class="remind-box" wx:if="{{remind}}">
+    <image class="remind-img" src="/assets/images/loading.gif"></image>
+  </view>
+  <block wx:else>
+    <view class='top-bg'>
+      <view><text class='top-zn'>全球试销体验官\n火热招募中</text></view>
+      <!-- <view><text class='top-en'>X I A N G A I</text></view> -->
+    </view>
+    <view class="content">
+      <view class="hd" style="transform:rotateZ({{angle}}deg);">
+        <image class="wave" src="/assets/images/wave.png" mode="aspectFill"></image>
+        <image class="wave wave-bg" src="/assets/images/wave.png" mode="aspectFill"></image>
+      </view>
+      <view class="bd">
+        <text class='bottom-text'>抢先体验详情咨询\n享爱猫社交新零售</text>
+          <button class="confirm-btn"  open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+            点击开启新时代
+          </button>
+        <text class="copyright">享爱猫商学院提供技术支持</text>
+      </view>
+    </view>
+  </block>
+</view>
+
+
+
+<!-- 
+<view class="authorize-warning" hidden="{{!isShowAhturoizeWarning}}">
+    <view class="box">
+      <view class="title">警告</view>
+      <view class="content">拒绝授权后，将无法通知您。。。。。点击“取消”拒绝提醒，点击“确定”再次尝试授权？</view>
+      <view class="footer">
+        <button bindtap="cancelAuthroize">取消</button>
+        <button open-type="getUserInfo" bindgetuserinfo="getAuthorize">确定</button>
+      </view>
+    </view>
+  </view>  -->

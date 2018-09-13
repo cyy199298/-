@@ -1,0 +1,57 @@
+.searchButton { 
+  height: 80rpx;
+  position: fixed;top: 0; 
+  z-index: 100;
+  width: 10%;
+  right: 0;
+  background: #F7F7F7;
+}
+.searchButton image {
+
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+}
+.tab-h{
+    height: 80rpx;width: 90%; box-sizing: border-box;overflow: hidden;line-height: 80rpx;background: #F7F7F7; font-size: 16px; white-space: nowrap;position: fixed;top: 0; left: 0; z-index: 99;}
+.tab-item{margin:0 36rpx;display: inline-block;font-size: 28rpx;}
+.tab-item.active{color: #1A93F9;position: relative;}
+.tab-content{margin-top: 80rpx;}
+.scoll-h{height: 100%;}
+
+.class-doc-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 60rpx 12rpx 10rpx 12rpx;
+}
+
+.class-doc-list-item {
+  background-color: white;
+  width: 339rpx;
+  margin: 0rpx 12rpx 30rpx 12rpx;
+  flex-shrink: 0;
+}
+
+.class-doc-list-img-box {
+  width: 339rpx;
+  height: 339rpx;
+  position: relative;
+}
+
+.class-doc-list-img-box-img {
+  width: 339rpx;
+  height: 339rpx;
+  border-radius: 10rpx;
+}
+
+.view-count {
+  position: absolute;
+  left: 20rpx;
+  bottom: 30rpx;
+  font-size: 34rpx;
+}
+
+.view-count-text {
+  color: #fff;
+}

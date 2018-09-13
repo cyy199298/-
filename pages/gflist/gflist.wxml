@@ -1,0 +1,41 @@
+
+<!--主体  -->
+<block wx:for="{{listArray}}" wx:for-index="bindex" wx:key="{{item}}">
+      <view class="list-item">
+          <view class="q-right">
+            <view class="q-info">
+
+            </view>
+            <view class="q-title" bindtap="goDetail">{{item.des}}</view>
+
+            <!--图片及视频  -->
+            <view class="pic-grid">
+             <block wx:if="{{item.type==1}}">
+                  <image wx:for="{{item.url}}" wx:key="{{item}}" data-index='{{bindex}}' data-image="{{item}}" mode="aspectFill" bindtap="imgYu" src="{{item}}" class="pic2"></image>
+             </block>
+
+            <block wx:if="{{item.type==2}}">
+              <video wx:for="{{item.url}}" wx:key="{{item}}" src="{{item}}" class='list-video'></video>
+            </block>
+            </view>
+          </view>
+
+        <view class='list-bottom'>
+          <!--时间  -->
+          <view class='timeline'>{{item.addtime}}</view>
+          <!--按钮  -->
+          <view class='bottom-btn' >
+            <!-- <button class='share-btn' open-type="share">分享</button> -->
+            <button class='share-btn' data-index="{{bindex}}" bindtap="clickcopytext">复制文案</button>
+            <view class='copy-btn' data-index="{{bindex}}" bindtap="clicksave">一键保存</view>
+          </view>
+        </view>
+    </view>
+  </block>
+
+<view class='nodata' wx-if='{{nodata}}'>暂无数据</view>
+
+  <view class="section">
+    <picker mode = "multiSelector" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    </picker>
+  </view>
